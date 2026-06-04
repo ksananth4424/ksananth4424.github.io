@@ -103,6 +103,11 @@ h2 {
   font-weight: 700;
 }
 
+.contribution-note {
+  color: #666;
+  font-size: 13px;
+}
+
 .name {
   padding-top: 20px;
   margin: 0;
@@ -139,9 +144,9 @@ h2 {
   text-decoration: none;
 }
 
-.nav-links { list-style: none; display:flex; gap:20px; margin:0; padding:0; align-items:center; }
+.nav-links { list-style: none; display:flex; gap:16px; margin:0; padding:0; align-items:center; }
 .nav-links a { color:#333; text-decoration:none; transition: color .2s; }
-.nav-links a { font-size: 18px; }
+.nav-links a { font-size: 16px; }
 .nav-links a:hover { color:#000; }
 
 .nav-toggle { display:none; cursor:pointer; }
@@ -216,6 +221,51 @@ h2 {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.section-block {
+  padding: 16px 0;
+}
+
+.news-list,
+.honors-list {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.news-list li,
+.honors-list li {
+  margin-bottom: 10px;
+  line-height: 1.55;
+}
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 108px 1fr;
+  gap: 14px;
+}
+
+.news-date {
+  color: #666;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.honors-list li {
+  padding-left: 18px;
+  position: relative;
+}
+
+.honors-list li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #1772d0;
+  position: absolute;
+  left: 0;
+  top: 0.72em;
 }
 
 .hero-photo.is-visible {
@@ -308,6 +358,11 @@ body.dark-mode .nav-toggle .bar, body.dark-mode .nav-links a, body.dark-mode .na
   .experience-date {
     text-align: left;
   }
+
+  .news-list li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
 }
 
 /* Research card styles */
@@ -347,7 +402,7 @@ body.dark-mode .nav-toggle .bar, body.dark-mode .nav-links a, body.dark-mode .na
 }
 
 .research-details {
-  display: inline;
+  display: inline-block;
 }
 
 .research-details summary {
@@ -366,6 +421,14 @@ body.dark-mode .nav-toggle .bar, body.dark-mode .nav-links a, body.dark-mode .na
   opacity: 0;
   transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease, margin-top 0.4s ease;
   margin-top: 0;
+  color: #444;
+  line-height: 1.55;
+}
+
+.research-details[open] .research-abstract {
+  max-height: 220px;
+  opacity: 1;
+  margin-top: 10px;
 }
 
 .research-abstract > p {
@@ -462,7 +525,7 @@ span.highlight {
     border-radius: 10px;
 }
 
-/* Miscellanea layout */
+/* Teaching card layout */
 .misc-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -481,6 +544,12 @@ body.dark-mode .research-card {
 }
 body.dark-mode .lead {
   color: inherit;
+}
+
+body.dark-mode .news-date,
+body.dark-mode .research-abstract,
+body.dark-mode .contribution-note {
+  color: #aaa;
 }
 
 body.dark-mode .research-card:hover {
